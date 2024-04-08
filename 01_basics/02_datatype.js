@@ -13,6 +13,6 @@ let state;
 //object
 
 console.log(typeof "hitesh"); 
-console.log(typeof isLoggedIn); 
+console.log(typeof isLo ggedIn); 
 console.log(typeof null); //object
 console.log(typeof undefined); //undefined
