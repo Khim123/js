@@ -1,0 +1,116 @@
+<!-- console.log(window)
+console.log(window.document)
+console.log(document) -> gives html
+console.dir(document) -> gives  all details 
+
+window
+
+html
+
+head body 
+
+head -> title, meta
+title -> text node
+meta -> attribute
+body -> div
+div -> attribute, h1,
+
+HTMLCOLLECTION Is not an array but can be converted to array
+
+document.getElementById('firstHeading')
+document.getElementById('firstHeading').innerHTML = "<h1> KHIM SHRESTHA </h1>"
+
+
+
+document.getElementById('title') gives h1 element
+document.getElementById('title').id gives title
+document.getElementById('title').class -> undefined,
+document.getElementById('title').className -> 'heading'
+
+document.getElementById('title').getAttribute('id') //provide key, gives value, key-value concept
+document.getElementById('title').getAttribute('class')
+document.getElementById('title').setAttribute('class', 'test')
+
+
+const title = document.getElementById('title').getAttribute('id') //store in title and u can use all other tags
+
+title.style.backgroundColor = 'green'
+title.style.padding = "15px"
+
+title.textContent //gives content
+title.innerText //gives content
+title.innerHTML //gives content
+
+document.querySelector('h1') //gives first h1 of page 
+
+document.querySelector('input[type="password"]')
+document.querySelector('p:first-child')
+
+document.querySelector('ul')
+const myUl = document.querySelector('ul')
+const turnGreen = myUl.querySelector('li')
+turnGreen.style.backgroundColor = "green"
+turnGreen.style.padding = "10px"
+
+//all gives NodeList, all list of li, looks like array but its not an array
+const tempLiList = document.querySelectorAll('ul')
+tempLiList.style.color = 'green' //not possible for all
+tempLiList[0].style.color = 'green'  //first in the list to colored
+
+tempLiList.forEach(function(l){ //using forEach function of NodeList
+    l.style.backgroundColor = 'green'
+})
+
+document.getElementsByClassName('list-item') //returns HTMLCollection
+const tempClassList = document.getElementsByClassName('list-item') //returns HTMLCollection
+tempClassList.forEach(function(li){ //HTMLCollection do not have forEach()
+    console.log(li)
+})
+
+Array.from(tempClassList) //convert HTMLCollection into Array
+const myConvertedArray = Array.from(tempClassList) 
+myConvertedArray.forEach(function(li) {
+    li.style.color = 'orange'
+})
+
+
+
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM LEARNING</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div class ="bg-black">
+        <h1 style= "color: blue" id = "title" class = "heading"> 
+             DOM LEARNING WITH KHIM <span style="display : none;"> test text </span> </h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class = "list-item">one</li>
+            <li class = "list-item">two</li>
+            <li class = "list-item">three</li>
+            <li class = "list-item">four</li>
+        </ul>
+
+    </div>
+    
+</body>
+</html>
