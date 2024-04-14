@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM METHOD CREATION</title>
+</head>
+<body style="background-color: #212121; color:#fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) { //add li language into ul
+       const li =  document.createElement('li')
+       li.innerHTML = `${langName}` //traverse each and every element of document: not good practise if its big project
+       document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage("java")
+    addLanguage("c++")
+
+
+    function addOptiLanguage(langName) {
+        const li =  document.createElement('li')
+        //li.appendChild(document.createTextNode(lang))
+        const addText = document.createTextNode(lang)
+        li.appendChild(addText)
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addOptiLanguage("c");
+    addOptiLanguage("python");
+
+
+
+    //edit
+    const secLangugae =  document.querySelector("li:nth-child(2)")
+    //secLangugae.innerHTML= "mojo" //not optimize way
+    const newLi = document.createElement('li')
+    newLi.textContent = "MOJO" 
+    secLangugae.replaceWith(newLi)
+
+
+    //edit
+    const firstLanguge = document.querySelector("li:first-child")
+    firstLanguge.outerHTML = '<li>TYPEEESCRIPPT</li>'
+
+    //remove
+    const firstLanguge = document.querySelector("li:last-child")
+    firstLanguge.remove()
+
+    
+    
+
+
+
+
+</script>
+</html>
