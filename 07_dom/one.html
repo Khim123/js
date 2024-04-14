@@ -1,6 +1,8 @@
 <!-- console.log(window)
 console.log(window.document)
 console.log(document) -> gives html
+console.log(document.baseURI) 
+console.log(document.links) -> gives all link, (HTMLCollection)
 console.dir(document) -> gives  all details 
 
 window
@@ -13,8 +15,12 @@ head -> title, meta
 title -> text node
 meta -> attribute
 body -> div
-div -> attribute, h1,
+div -> attribute, h1, p
+h1 -> attribute, text node
+p -> text node
 
+
+array we can use forEach and all other methods
 HTMLCOLLECTION Is not an array but can be converted to array
 
 document.getElementById('firstHeading')
@@ -37,12 +43,18 @@ const title = document.getElementById('title').getAttribute('id') //store in tit
 title.style.backgroundColor = 'green'
 title.style.padding = "15px"
 
-title.textContent //gives content
-title.innerText //gives content
-title.innerHTML //gives content
+title.innerText //gives content (display only visible content)
+title.textContent //gives content (display all content even though its hidden bacuase of css properties)
+title.innerHTML //gives content + innert html values lets say we add span tag + some text
 
+
+document.getElementByClassName('heading') //return HTMLCOLLECTION
+
+//query selector only gives one value
+//we can use CSS selectors
 document.querySelector('h1') //gives first h1 of page 
-
+document.querySelector('#title') //select id
+document.querySelector('.heading') //select class
 document.querySelector('input[type="password"]')
 document.querySelector('p:first-child')
 
@@ -52,6 +64,12 @@ const turnGreen = myUl.querySelector('li')
 turnGreen.style.backgroundColor = "green"
 turnGreen.style.padding = "10px"
 
+
+
+
+NODELIST AND HTMLCOLLECTION ARE NOT PURE ARRAY
+
+//query selectorall gives all the values : nodelist, it have foreach method
 //all gives NodeList, all list of li, looks like array but its not an array
 const tempLiList = document.querySelectorAll('ul')
 tempLiList.style.color = 'green' //not possible for all
